@@ -1,0 +1,79 @@
+QManager:
+
+    MainScreen:
+
+        name: 'main_screen'
+
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text:'Main'
+
+            BoxLayout:
+                size_hint: (1, 0.1)
+                orientation: 'horizontal'
+                Button:
+                    text: 'LOAD'
+                Button:
+                    text: 'CAMERA'
+                    on_release: 
+                        app.root.current = 'photo_screen'
+                        root.transition.direction = 'left'
+
+    PhotoScreen:
+
+        name : 'photo_screen'
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            BoxLayout:
+                size_hint: (1, 0.1)
+                width: 20
+                orientation: 'vertical'
+                Button:
+                    text: '<-'
+                    size_hint: (0.1, 1)
+                    
+                    on_release: 
+                        app.root.current = 'main_screen'
+                        root.transition.direction = 'right'
+
+            Label:
+                text: 'CAMERA'
+
+            Button:
+                size_hint:(1, 0.1)
+                text: 'TAKE PICTURE'
+            ProgressBar:
+                size_hint:(1, 0.05)
+    
+    ProcessScreen:
+        name: 'process_screen'
+
+        BoxLayout:
+            orientation: 'vertical'
+            
+            BoxLayout:
+                size_hint: (1, 0.1)
+                width: 20
+                orientation: 'vertical'
+                Button:
+                    text: '<-'
+                    size_hint: (0.1, 1)
+                    
+                    on_release: 
+                        app.root.current = 'main_screen'
+                        root.transition.direction = 'right'
+                Label:
+                    text: 'result'
+
+
+
+
+
+
+
+
+
+
